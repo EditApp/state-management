@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Application from './Application';
 
 import './styles.css';
-import GrudgeProvider from './GrudgeContext';
+import { GrudgeProvider } from './GrudgeContext';
 
 const rootElement = document.getElementById('root');
 

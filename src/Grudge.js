@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { GrudgeContext } from './GrudgeContext';
 
-const Grudge = ({ grudge }) => {
-  const { toggleForgiveness } = useContext(GrudgeContext);
+const Grudge = React.memo(({ grudge }) => {
+  const { toggleForgiveness } = React.useContext(GrudgeContext);
   const forgive = () => toggleForgiveness(grudge.id);
-  console.log('REND GRUDGE', grudge.id);
+
+  console.log('Rendering Grudge');
+
   return (
     <article className="Grudge">
       <h3>{grudge.person}</h3>
@@ -17,6 +19,6 @@ const Grudge = ({ grudge }) => {
       </div>
     </article>
   );
-};
+});
 
 export default Grudge;
